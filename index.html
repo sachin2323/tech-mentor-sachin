@@ -120,6 +120,46 @@
     background: #000;
 }
 
+        .profile-hex {
+    /* Define desired badge size and glowing frame around the image */
+    width: 180px; 
+    height: 180px;
+    background: var(--accent-glow); /* The glowing color */
+    
+    /* Standard flat-top vertical hexagonal clip to frame the portrait */
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    
+    /* Flexbox to precisely center the smaller image within the glowing frame */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Ensure no margins or padding from the site interfere with centering */
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
+}
+
+.profile-img {
+    /* Slightly smaller dimensions than the frame to create an intentional, even glowing border (4px margin all around) */
+    width: 172px; 
+    height: 172px;
+    
+    /* Standard flat-top vertical hexagonal clip to shape the image itself */
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    
+    /* CORE CHANGE for a perfect fit for a portrait illustration with its own background.
+       Use 'cover' to force the central man and background detail to fill the inner hexagonal space, 
+       preventing black letterboxing on the sides, which 'scale-down' often causes on vertical or non-square images. */
+    object-fit: cover; 
+    
+    /* Ensure the center of the illustration (the man's face) is centrally aligned within the hex clip */
+    object-position: center center;
+    
+    /* Keep a clean background (though 'cover' fills all space, it is good practice for loading) */
+    background: #000;
+}
+
         .headline h2 {
             font-size: 28px;
             margin: 0;
