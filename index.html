@@ -74,7 +74,7 @@
             align-items: center;
         }
 
-        .profile-hex {
+        /* .profile-hex {
             width: 180px;
             height: 180px;
             background: var(--accent-glow);
@@ -90,7 +90,35 @@
             clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
             object-fit: scale-down;
             background: #000;
-        }
+        } */
+
+.profile-hex {
+    width: 180px;
+    height: 180px;
+    background: var(--accent-glow, #00f2ff); /* Fallback to cyan glow */
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Added a subtle glow effect to match the image style */
+    filter: drop-shadow(0 0 10px rgba(0, 242, 255, 0.5));
+    transition: transform 0.3s ease;
+}
+
+.profile-hex:hover {
+    transform: scale(1.05);
+}
+
+.profile-img {
+    width: 172px;
+    height: 172px;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    /* Changed from scale-down to cover to fill the hex */
+    object-fit: cover; 
+    /* Centers the face in the hexagon */
+    object-position: center 20%; 
+    background: #000;
+}
 
         .headline h2 {
             font-size: 28px;
