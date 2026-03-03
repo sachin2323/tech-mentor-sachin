@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:title" content="Sachin Singh | Tech & AI Mentor">
     <meta property="og:description" content="Master CS and AI Agents with a Lead Dev from a London Startup.">
-    <title>Sachin Singh | Tech & AI Architecture </title>
+    <title>Sachin Singh | Tech & AI Architecture</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -22,7 +22,7 @@
             background-color: var(--bg-dark);
             color: var(--text-main);
             margin: 0;
-            padding: 40px 20px;
+            padding: 20px; /* Reduced padding for mobile */
             display: flex;
             justify-content: center;
             background-image: 
@@ -31,7 +31,8 @@
         }
 
         .container {
-            width: 850px;
+            width: 100%;
+            max-width: 850px; /* Limits size on desktop */
             background: rgba(15, 23, 42, 0.8);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -40,9 +41,9 @@
             box-shadow: 0 0 50px rgba(0, 210, 255, 0.1);
         }
 
-        /* Header with Neon Glow */
+        /* Header */
         .header {
-            padding: 40px;
+            padding: 30px 20px;
             text-align: center;
             background: linear-gradient(180deg, rgba(0, 210, 255, 0.1) 0%, transparent 100%);
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -50,7 +51,7 @@
 
         .header h1 {
             font-family: 'Orbitron', sans-serif;
-            font-size: 32px;
+            font-size: 1.5rem; /* Fluid typography */
             margin: 0;
             background: linear-gradient(90deg, #fff, var(--accent-glow));
             -webkit-background-clip: text;
@@ -60,109 +61,83 @@
 
         .header p {
             color: var(--accent-glow);
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             font-weight: 600;
             margin-top: 10px;
+            font-size: 0.9rem;
         }
 
-        /* Profile Grid */
+        /* Profile Section - Responsive Grid */
         .profile-section {
             display: grid;
-            grid-template-columns: 200px 1fr;
-            gap: 30px;
-            padding: 40px;
-            align-items: center;
+            grid-template-columns: 1fr; /* Mobile first: single column */
+            gap: 20px;
+            padding: 30px 20px;
+            text-align: center;
+            justify-items: center;
         }
 
-        /* .profile-hex {
-            width: 180px;
-            height: 180px;
-            background: var(--accent-glow);
+        .profile-hex {
+            width: 160px;
+            height: 160px;
+            background: var(--accent-glow, #00f2ff);
             clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
             display: flex;
             align-items: center;
             justify-content: center;
+            filter: drop-shadow(0 0 10px rgba(0, 242, 255, 0.5));
+            transition: transform 0.3s ease;
         }
 
         .profile-img {
-            width: 172px;
-            height: 172px;
+            width: 152px;
+            height: 152px;
             clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-            object-fit: scale-down;
+            object-fit: cover; 
+            object-position: center 20%; 
             background: #000;
-        } */
+        }
 
-.profile-hex {
-    width: 180px;
-    height: 180px;
-    background: var(--accent-glow, #00f2ff); /* Fallback to cyan glow */
-    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* Added a subtle glow effect to match the image style */
-    filter: drop-shadow(0 0 10px rgba(0, 242, 255, 0.5));
-    transition: transform 0.3s ease;
-}
-
-.profile-hex:hover {
-    transform: scale(1.05);
-}
-
-.profile-img {
-    width: 172px;
-    height: 172px;
-    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-    /* Changed from scale-down to cover to fill the hex */
-    object-fit: cover; 
-    /* Centers the face in the hexagon */
-    object-position: center 20%; 
-    background: #000;
-}
         .headline h2 {
-            font-size: 28px;
+            font-size: 1.5rem;
             margin: 0;
             color: #fff;
         }
 
         .landscape-box {
             margin-top: 15px;
-            padding: 20px;
+            padding: 15px;
             border-radius: 12px;
             background: rgba(0, 210, 255, 0.05);
             border: 1px solid rgba(0, 210, 255, 0.2);
-            line-height: 1.6;
+            line-height: 1.5;
             color: var(--text-muted);
+            font-size: 0.9rem;
+            text-align: left;
         }
 
         .landscape-box b { color: var(--accent-glow); }
 
-        /* Tech Columns */
+        /* Tech Columns - Responsive Grid */
         .grid-container {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
-            padding: 0 40px 40px;
+            grid-template-columns: 1fr; /* Single column for mobile */
+            gap: 20px;
+            padding: 0 20px 30px;
         }
 
         .tech-card {
             background: var(--card-bg);
             border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 16px;
-            padding: 25px;
-            transition: transform 0.3s ease;
+            padding: 20px;
         }
-
-        .tech-card:hover { border-color: var(--accent-glow); }
 
         .tech-card h3 {
             font-family: 'Orbitron', sans-serif;
-            font-size: 14px;
+            font-size: 12px;
             color: var(--accent-glow);
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            margin-bottom: 15px;
         }
 
         .tech-card ul {
@@ -172,60 +147,71 @@
         }
 
         .tech-card li {
-            padding: 8px 0;
+            padding: 6px 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            font-size: 14px;
-            color: var(--text-main);
+            font-size: 13px;
         }
 
-        .tech-card li::before {
-            content: "▹";
-            color: var(--accent-glow);
-            margin-right: 10px;
-        }
-
-        /* Stats Section */
+        /* Stats Section - Responsive Grid */
         .stats-bar {
             background: rgba(255, 255, 255, 0.03);
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: 1fr; /* Stacked for mobile */
+            gap: 15px;
             text-align: center;
             padding: 20px;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        .stat-item span { display: block; font-size: 12px; color: var(--text-muted); margin-bottom:4px; }
-        .stat-item strong { color: #fff; font-size: 16px; }
+        .stat-item span { display: block; font-size: 11px; color: var(--text-muted); margin-bottom:2px; }
+        .stat-item strong { color: #fff; font-size: 14px; }
 
-        /* Call to Action */
+        /* Footer & CTA */
         .footer {
-            padding: 40px;
+            padding: 30px 20px;
             text-align: center;
-            background: linear-gradient(0deg, rgba(0, 210, 255, 0.05) 0%, transparent 100%);
         }
 
         .cta-button {
             background: var(--accent-glow);
             color: #000;
-            padding: 18px 40px;
+            padding: 15px 30px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 800;
             font-family: 'Orbitron', sans-serif;
-            display: inline-block;
+            display: block; /* Full width on mobile */
             box-shadow: 0 0 20px rgba(0, 210, 255, 0.4);
-            transition: 0.3s;
+            font-size: 0.85rem;
         }
 
-        .cta-button:hover { transform: scale(1.05); box-shadow: 0 0 30px var(--accent-glow); }
-
-        .links { margin-top: 30px; font-size: 14px; }
+        .links { margin-top: 25px; font-size: 13px; }
+        .links p { margin: 10px 0; overflow-wrap: break-word; }
         .links a { color: var(--accent-glow); text-decoration: none; border-bottom: 1px solid; }
 
-        @media print {
-            body { background: white; color: black; padding: 0; }
-            .container { box-shadow: none; border: 1px solid #ccc; width: 100%; }
-            .cta-button { border: 2px solid black; }
+        /* TABLET & DESKTOP ADJUSTMENTS */
+        @media (min-width: 600px) {
+            .stats-bar {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (min-width: 768px) {
+            body { padding: 40px 20px; }
+            .header h1 { font-size: 32px; }
+            .profile-section {
+                grid-template-columns: 200px 1fr;
+                text-align: left;
+                padding: 40px;
+                justify-items: start;
+            }
+            .grid-container {
+                grid-template-columns: 1fr 1fr;
+                padding: 0 40px 40px;
+            }
+            .cta-button {
+                display: inline-block; /* Return to button size */
+            }
         }
     </style>
 </head>
@@ -290,7 +276,7 @@
         <div class="links">
             FOR STUDENTS | GRADUATES | WORKING PROFESSIONALS<br><br>
             <p>LinkedIn: <a href="https://www.linkedin.com/in/sachin-singh-cse/" target="_blank">linkedin.com/in/sachin-singh-cse/</a></p>
-            <p>Phone: <a href="tel:+919004692323" target="_blank">+919004692323</a></p>
+            <p>Phone: <a href="tel:+919004692323" target="_blank">+91 90046 92323</a></p>
         </div>
     </div>
 </div>
